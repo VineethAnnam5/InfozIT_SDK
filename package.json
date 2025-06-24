@@ -1,0 +1,33 @@
+{
+  "name": "your-push-notification-sdk",
+  "version": "1.0.0",
+  "description": "A JavaScript SDK for push notifications.",
+  "main": "dist/sdk.js",
+  "module": "dist/sdk.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "InfozIT",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VineethAnnam5/InfozIT_SDK" 
+    },
+  "keywords": [
+    "push",
+    "notifications",
+    "sdk",
+    "web-push",
+    "service-worker"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "rollup": "^3.0.0", 
+    "rollup-plugin-copy": "^3.5.0"
+  }
+}
