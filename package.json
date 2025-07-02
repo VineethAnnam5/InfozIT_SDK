@@ -1,35 +1,24 @@
 {
-  "name": "infozit-push-notification-sdk",
-  "version": "1.0.0",
-  "description": "A JavaScript SDK for push notifications by InfozIT.",
-  "main": "dist/push-sdk.min.js",   
-  "module": "dist/push-sdk.min.js", 
-  "browser": "dist/push-sdk.min.js",
-  "unpkg": "dist/push-sdk.min.js",
-  "files": [
-    "dist"
-  ],
+  "name": "infozit-notification-sdk",
+  "version": "1.0.2",
+  "description": "SDK for InfozIT Push Notifications",
+  "main": "dist/infozit-push-notification-sdk.umd.js",  
+  "module": "dist/infozit-push-sdk.esm.js",             
+  "unpkg": "dist/infozit-push-notification-sdk.umd.js", 
+  "jsdelivr": "dist/infozit-push-notification-sdk.umd.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rollup -c",
-    "prepublishOnly": "npm run build"
+    "build": "rollup -c", 
+    "dev": "rollup -c -w" 
   },
-  "author": "InfozIT",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/VineethAnnam5/InfozIT_SDK.git" 
-  },
-  "keywords": [
-    "push",
-    "notifications",
-    "sdk",
-    "web-push",
-    "service-worker",
-    "infozit"
-  ],
-  "dependencies": {},
   "devDependencies": {
-    "rollup": "^3.0.0", 
-    "rollup-plugin-copy": "^3.5.0"
-  }
+    "rollup": "^4.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "rollup-plugin-copy": "^3.0.0"
+  },
+  "files": [
+    "dist",
+    "src/sw/service-worker.js" 
+  ]
 }

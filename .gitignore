@@ -1,13 +1,10 @@
-# Node modules
+# Gitignore for push-notification-sdk
+
 node_modules/
-
-# Logs
-logs/
-*.log
-
-# Environment variables
+dist/          # It's common to ignore 'dist' if you only deploy from CI/CD,
+               # but for manual npm publish, it's fine for it to be generated locally.
+               # 'files' in package.json controls what gets published.
 .env
-
-# Build output
-dist/
-build/
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
