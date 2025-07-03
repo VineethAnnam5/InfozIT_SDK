@@ -3,7 +3,7 @@
 // IMPORTANT: This URL MUST be replaced with your client's actual backend endpoint
 // for tracking notification clicks.
 // Make sure this is an HTTPS URL if your app is HTTPS.
-const TRACKING_API_URL = 'http://192.168.1.163/api/pushtokens/updateclick'; 
+const TRACKING_API_URL = 'http://localhost:3050/api/pushtokens/updateclick'; 
 
 self.addEventListener('push', (event) => {
     if (!event.data) {
@@ -50,6 +50,7 @@ self.addEventListener('push', (event) => {
             userId: userId, // ✅ Added here
             launchUrlId: launchUrlId, // ✅ Optional main notification launchUrlId
             trackingApiUrl: TRACKING_API_URL,
+            hasClicked: true,
             originalButtons: payload.buttons // keep original to extract button-specific launchUrl or launchUrlId
         },
         tag: `notification-${notificationId}`,
@@ -81,6 +82,7 @@ self.addEventListener('notificationclick', (event) => {
     const userId = notificationData.userId; // ✅ Added
     const originalButtons = notificationData.originalButtons;
     const launchUrlId = notificationData.launchUrlId; // ✅ Added
+    const hasClicked = notificationData.hasClicked; // ✅ Added
 
     console.log('[Service Worker] Notification clicked. Action:', clickedAction, 'Data:', notificationData);
 
@@ -107,7 +109,8 @@ self.addEventListener('notificationclick', (event) => {
             notificationId: notificationId,
             action: clickedAction || 'main_click',
             userId: userId, // ✅ Send to backend
-            launchUrlId: notificationData.launchUrlId // ✅ Send to backend
+            launchUrlId: notificationData.launchUrlId, // ✅ Send to backend
+            hasClicked: notificationData.hasClicked // ✅ Send to backend
         };
 
         event.waitUntil(

@@ -144,8 +144,8 @@
   async function sendWelcomeNotification(registration, welcomeIconPath) {
     if (registration && 'Notification' in window) {
       try {
-        await registration.showNotification('Welcome to Teksskillhub!', {
-          body: 'Thanks for enabling notifications. We\'ll keep you updated!',
+        await registration.showNotification('You’re All Set for Instant Alerts', {
+          body: 'Thanks for enabling notifications. We\'ll keep you updated!We’ll keep you in the loop with updates, offers, and helpful tips — right when you need them.',
           icon: welcomeIconPath || '/welcome-icon.png', // Fallback to a common path
           tag: 'welcome-notification' // Use a tag to prevent multiple welcome notifications
         });
