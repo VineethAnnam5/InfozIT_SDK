@@ -1,6 +1,7 @@
-// push-notification-sdk/src/index.js
+// File: push-notification-sdk/src/index.js
 
-import { subscribeUser } from './utils/push'; // Import push-related utilities
+import { subscribeUser } from './utils/push.js'; // Import push-related utilities
+import { sendNotification } from './api/index.js'; // Import the new sendNotification function from your API module
 
 /**
  * Initializes the InfozIT Push Notification SDK.
@@ -78,3 +79,6 @@ export async function init(config) {
     }
   }
 }
+
+// Export the new sendNotification function to make it part of the SDK's public API
+export { sendNotification };
