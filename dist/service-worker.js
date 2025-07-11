@@ -3,7 +3,7 @@
 // IMPORTANT: This URL MUST be replaced with your client's actual backend endpoint
 // for tracking notification clicks.
 // Make sure this is an HTTPS URL if your app is HTTPS.
-const TRACKING_API_URL = 'http://localhost:3050/api/pushtokens/updateclick'; 
+const TRACKING_API_URL = 'http://192.168.0.15:3050/api/pushtokens/updateclick'; 
 
 self.addEventListener('push', (event) => {
     if (!event.data) {
